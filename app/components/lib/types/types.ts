@@ -1,6 +1,6 @@
 export interface IAccount {
-  amount: number | string;
-  rate: number | string;
+  amount: number;
+  rate: number;
   date: string;
   currency: string;
 }

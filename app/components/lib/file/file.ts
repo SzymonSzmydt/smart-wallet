@@ -2,18 +2,21 @@
 import fs from "node:fs";
 import path from "path";
 import { IAccount } from "../types/types";
-import { formatDate } from "../utilitis/formatDate";
 
 export async function readFile() {
   const filePath = path.join(process.cwd(), "./storage/currency-euro.json");
 
-  const fileData = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(fileData);
+  try {
+    const fileData = fs.readFileSync(filePath, "utf8");
+    return JSON.parse(fileData) as IAccount[];
+  } catch (err) {
+    console.error(err);
+  }
+  return [];
 }
 
-export async function writeFile(file: Partial<IAccount>) {
+export async function writeFile(file: Array<IAccount>) {
   if (file) {
-    file.date = formatDate();
     const data = JSON.stringify(file);
     const filePath = "./storage/currency-euro.json";
 

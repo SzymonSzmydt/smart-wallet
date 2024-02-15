@@ -2,20 +2,28 @@
 import { FormEvent, useState } from "react";
 import ExchangeIcon from "../../icons/ExchangeIcon";
 import { writeFile } from "../../lib/file/file";
+import { IAccount } from "../../lib/types/types";
+import { formatDate } from "../../lib/utils/formatDate";
 import style from "./styles/exchange.module.css";
 
-const ExchangeForm = () => {
+interface IProps {
+  accountData: IAccount[];
+}
+
+const ExchangeForm = ({ accountData }: IProps) => {
   const [isBuying, setIsBuying] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = {
-      rate: formData.get("rate") as string,
-      amount: formData.get("amount") as string,
+      rate: parseFloat(formData.get("rate") as string),
+      amount: parseFloat(formData.get("amount") as string),
       currency: "EURO",
+      date: formatDate(),
     };
-    writeFile(data);
+    accountData.push(data);
+    writeFile(accountData);
   };
 
   return (

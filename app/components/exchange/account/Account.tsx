@@ -2,7 +2,7 @@ import { IAccount } from "../../lib/types/types";
 import style from "./styles/acount.module.css";
 
 interface IProps {
-  accountData: Array<IAccount> | null;
+  accountData: IAccount[];
 }
 
 const Account = ({ accountData }: IProps) => {
