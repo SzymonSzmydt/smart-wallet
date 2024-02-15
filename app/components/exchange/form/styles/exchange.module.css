@@ -1,0 +1,35 @@
+.wrapper {
+    padding: 1rem 0;
+}
+
+.wrapper div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    user-select: none;
+}
+
+.wrapper div svg {
+    cursor: pointer;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rate {
+    min-width: 5rem;
+    width: 40%;
+}
+
+.amount {
+    min-width: 10rem;
+    width: 60%;
+}
+
+.wrapper button {
+    width: 100%;
+    margin: 1rem 0;
+}

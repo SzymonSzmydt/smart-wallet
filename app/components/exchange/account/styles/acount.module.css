@@ -1,0 +1,19 @@
+.wrapper {
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--radius);
+}
+
+.wrapper p:first-child {
+    color: var(--medium-color);
+    font-size: 0.875rem;
+}
+
+.wrapper h2 {
+    margin: 0.5rem 0;
+}
+
+.wrapper p:last-child {
+    color: var(--secondary-color);
+    font-size: 0.75rem;
+}

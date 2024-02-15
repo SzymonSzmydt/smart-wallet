@@ -1,10 +1,9 @@
-import ExchangeForm from "./components/form/ExchangeForm";
-import styles from "./page.module.css";
+import Exchange from "./components/exchange/Exchange";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <ExchangeForm />
+    <main>
+      <Exchange />
     </main>
   );
 }
